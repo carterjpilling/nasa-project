@@ -2,9 +2,6 @@ import React from 'react'
 import { makeStyles, Card, CardActionArea, CardContent, Typography, CardMedia, Grid } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import cardData from './data/data.json'
-import PhotoOfDay from './PhotoOfDay'
-import MarsWeather from './MarsWeather'
-import ImageLibrary from './ImageLibrary'
 
 const useStyles = makeStyles({
   root: {
@@ -52,9 +49,6 @@ export default function Homepage() {
       <Grid className={classes.gridcontainer} container spacing={4} justify="center" >
         {cardArray}
       </Grid>
-      <PhotoOfDay />
-      <MarsWeather />
-      <ImageLibrary />
     </div>
   )
 }

@@ -17,5 +17,14 @@ module.exports = {
       })
       .catch((err) => res.send(err))
   },
+  images: async (req, res) => {
+    const { searchitem } = req.params
+
+    await axios.get(`https://images-api.nasa.gov/search?q=${searchitem}&media_type=image`)
+      .then((response) => {
+        return res.status(200).send(response.data)
+      })
+      .catch((err) => res.send(err))
+  }
 
 }
