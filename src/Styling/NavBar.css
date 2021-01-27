@@ -4,4 +4,5 @@
 
 .nabar-links{
   text-decoration: none !important;
+  z-index: 2;
 }

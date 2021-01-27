@@ -4,7 +4,7 @@ import React from 'react'
 import Homepage from './Components/Homepage'
 import PhotoOfDay from './Components/PhotoOfDay'
 import MarsWeather from './Components/MarsWeather'
-import ImageLibrary from './Components/ImageLibrary'
+import ImageLibrary from './Components/ImageLibrary/ImageLibrary'
 
 export default (
   <Switch>

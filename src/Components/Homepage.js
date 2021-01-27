@@ -20,8 +20,8 @@ export default function Homepage() {
 
   const cardArray = cardData.map((e, i) => {
     return (
-      <Grid index={i} container spacing={4} justify="center" >
-        <Card className={classes.root}>
+      <Grid justify="center" >
+        <Card index={i} className={classes.root}>
           <Link to={e.link}>
             <CardActionArea>
               <CardMedia
