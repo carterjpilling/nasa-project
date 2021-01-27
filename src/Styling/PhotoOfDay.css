@@ -1,0 +1,14 @@
+.apod-parent{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apod-img{
+  max-width: 100%;
+}
+
+.apod-link{
+  text-decoration: none;
+}

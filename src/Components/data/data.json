@@ -2,16 +2,19 @@
   {
     "name": "APOD - Astronomy Picture of the Day",
     "image": "https://apod.nasa.gov/apod/image/2101/M51Bfield_Sofia_960.jpg",
-    "description": "Let your eyes gaze upon the glory of the Universe by visiting the daily interstellar capture."
+    "description": "Let your eyes gaze upon the glory of the Universe by visiting the daily interstellar capture.",
+    "link": "/apod"
   },
   {
     "name": "Mars Weather",
     "image": "https://apod.nasa.gov/apod/image/1812/ArmSeismometer_InSight_1024.jpg",
-    "description": "Have you ever let your noggin contemplate the climate on Mars? Heed no further, here is the 7-day on the red planet."
+    "description": "Have you ever let your noggin contemplate the climate on Mars? Heed no further, here is the 7-day on the red planet.",
+    "link": "/marsweather"
   },
   {
     "name": "NASA Image Library",
     "image": "https://blogs.nasa.gov/commercialcrew/wp-content/uploads/sites/230/2021/01/Jan14CM2_C01421JNP049_C3PF-Lift-to-Mate-with-SM2-1024x683.jpg",
-    "description": "Think Space is large? Try searching NASA's Image Library. Historical shots from Armstrong to modern day."
+    "description": "Think Space is large? Try searching NASA's Image Library. Historical shots from Armstrong to modern day.",
+    "link": "/imagelibrary"
   }
 ]
