@@ -4,11 +4,11 @@ import { Modal, Backdrop, Fade, Typography, CardMedia, Card } from '@material-ui
 import '../../Styling/ImageLibrary.css'
 
 const useStyles = makeStyles((theme) => ({
-  // modal: {
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
   media: {
-    height: 450,
+    height: 500,
   },
 }));
 
@@ -31,7 +31,7 @@ export default function ImageModal(props) {
   }
 
   return (
-    <div>
+    <div className="modal-div">
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -47,7 +47,7 @@ export default function ImageModal(props) {
         <Fade in={preview}>
           <div className={classes.paper}>
             <div
-              className="modal-img"
+              className="modal-img-container"
 
             >
               <img
@@ -56,12 +56,17 @@ export default function ImageModal(props) {
                 src={images[previewIndex].links[0].href}
 
               />
-              <Typography >
-                {images[previewIndex].data[0].title}
-              </Typography>
-              <Typography >
-                {images[previewIndex].data[0].description}
-              </Typography>
+              <body className="modal-description">
+                <Typography
+                  align='center'
+                >
+                  {images[previewIndex].data[0].title}
+
+                </Typography>
+                <Typography >
+                  {images[previewIndex].data[0].description}
+                </Typography>
+              </body>
             </div>
           </div>
         </Fade>
