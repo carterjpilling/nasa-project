@@ -1,6 +1,7 @@
-import React from 'react'
-import { TextField, Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Grid } from '@material-ui/core'
+import React, { useEffect, useState } from 'react'
+import { TextField, Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Grid, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import '../../Styling/ImageLibrary.css'
 
@@ -76,13 +77,35 @@ const useStyles = makeStyles({
   },
   gridcontainer: {
     flexGrow: 1,
+  },
+  search: {
+    width: 315
   }
 });
 
 
 
 function ImageLibrary() {
+  const history = useHistory()
   const classes = useStyles();
+  const [search, setSearch] = useState(null)
+
+  useEffect(() => {
+    setSearch(null)
+  }, [])
+
+  function imageSearch() {
+    history.push(`/imagelibrary/${search}`)
+  }
+
+  function keyDown(e) {
+    if (e.keyCode === 13) {
+      return imageSearch()
+    } else {
+      return null
+    }
+  }
+
 
   const mappedData = array.map((e, i) => {
     return (
@@ -95,7 +118,7 @@ function ImageLibrary() {
             image={e.img}
             title={e.title}
           />
-          <CardContent>
+          <CardContent >
             <Typography gutterBottom variant="h5" component="h2">
               {e.title}
             </Typography>
@@ -110,16 +133,33 @@ function ImageLibrary() {
 
   return (
     <div className='images-container'>
-      <TextField
-        id="standard-full-width"
-        style={{ margin: 8 }}
-        placeholder="Search here"
-        fullWidth
-        margin="normal"
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
+      <Card className="search-card" >
+        <Typography align='center'>
+          Search NASA's image library or click a popular subject below.
+        </Typography>
+        <CardContent className="search-cardcontent">
+          <TextField
+            onKeyDown={(e) => keyDown(e)}
+            id="standard-full-width"
+            style={{ margin: 8 }}
+            placeholder="Search for... (e.g. 'Artemis')"
+            margin="normal"
+            fullWidth
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Button
+            className='search-button'
+            variant="contained"
+            color="primary"
+            onClick={() => imageSearch()}
+          >
+            Search
+            </Button>
+        </CardContent>
+      </Card>
       <Grid
         className={classes.gridcontainer}
         container spacing={0}
@@ -129,7 +169,7 @@ function ImageLibrary() {
       >
         {mappedData}
       </Grid>
-    </div>
+    </div >
   )
 }
 

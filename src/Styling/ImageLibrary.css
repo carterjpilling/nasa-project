@@ -48,3 +48,30 @@
 .searchresults-container{
   min-height: 100vh;
 }
+
+.search-card{
+  width: 350 !important;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding: 15px 15px 0px 15px;
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+}
+
+.search-cardcontent{
+  width: 100%;
+  justify-content: center;
+  margin: 0px !important;
+  padding: 10px 15px 5px 15px !important;
+  display: flex;
+  align-items: flex-end;
+}
+
+.search-button{
+  height: 40px;
+  margin-bottom: 5px !important;
+  padding: 15px !important;
+  /* border:  2px solid black !important; */
+}
