@@ -1,45 +1,63 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import { TextField, Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Grid } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 import '../../Styling/ImageLibrary.css'
 
 const array = [
   {
-    title: "Planets",
-    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/images/607694main_Kepler22bArtwork_full.jpg",
-    searchWord: "planets",
-    description: "'These planets are out of this world!'"
-  },
-  {
-    title: "Lasers",
-    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/calipso-2015-01-28.jpg",
-    searchWord: "lasers",
-    description: "NASA has really cool lasers you guys."
+    title: "International Space Station",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss064e027012.jpg",
+    searchWord: "imagelibrary/International Space Station",
+    description: "Ever wonder who is watching the world while you sleep? Consider the ISS our first defense."
   },
   {
     title: "Mars Curiosity",
     img: "https://www.nasa.gov/sites/default/files/thumbnails/image/curiosity_selfie.jpg",
-    searchWord: "mars curiosity",
-    description: "Ever wanted to check out rocks on other planets? Well wish no longer my intergalactic voyagers."
+    searchWord: "imagelibrary/mars curiosity",
+    description: "Ever wanted to check out rocks on other planets? Well wish no longer my intergalactic sightseers."
+  },
+  {
+    title: "Planets",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/images/607694main_Kepler22bArtwork_full.jpg",
+    searchWord: "imagelibrary/planets",
+    description: `" These planets are out of this world! "`
+  },
+  {
+    title: "Lasers",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/calipso-2015-01-28.jpg",
+    searchWord: "imagelibrary/lasers",
+    description: "NASA has really cool lasers you guys."
   },
   {
     title: "Earth Missions",
     img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss064e016786.jpg",
-    searchWord: "Earth Missions",
+    searchWord: "imagelibrary/Earth Missions",
     description: "Earth is in space right? Check out missions to this great planet!"
-  },
-  {
-    title: "International Space Station",
-    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss064e027012.jpg",
-    searchWord: "International Space Station",
-    description: "Ever wonder who is watching the world while you sleep? Consider the ISS our first defense."
   },
   {
     title: "Presidents of the United States",
     img: "https://www.nasa.gov/sites/default/files/thumbnails/image/25-president_kennedy_tours_hangar_s.jpg",
-    searchWord: "International Space Station",
-    description: "Did you know the office of POTUS set and request NASA's agend and budget?"
+    searchWord: "imagelibrary/President of the United States",
+    description: "Did you know the office of POTUS sets and requests NASA's agend and budget?"
+  },
+  {
+    title: "Apollo 11",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/apollo_11_launch_-_gpn-2000-000630_1.jpg",
+    searchWord: "imagelibrary/Apollo",
+    description: "The first spaceflight that landed humans on the moon on July 20, 1969."
+  },
+  {
+    title: "Space Shuttle Discovery",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/images/247733main_full_full.jpg",
+    searchWord: "imagelibrary/Space Shuttle Discovery",
+    description: "With over 27 years of service, the Discovery has the most spaceflights of any ship to date."
+  },
+  {
+    title: "Space X Dragon",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss048e041836.jpg",
+    searchWord: "imagelibrary/Space X Dragon",
+    description: "Space X Dragon shows that private transportation can work. Now selling tickets to the Moon!"
   },
 ]
 
@@ -63,15 +81,14 @@ const useStyles = makeStyles({
 
 
 
-function ImageLibrary(props) {
+function ImageLibrary() {
   const classes = useStyles();
-
-  const [search, setSearch] = useState('Space Ship')
-
 
   const mappedData = array.map((e, i) => {
     return (
-      <CardActionArea key={i} className={classes.root}>
+      <CardActionArea key={i} className={classes.root} component={Link}
+        to={e.searchWord}
+      >
         <Card className={classes.card}>
           <CardMedia
             className={classes.media}
@@ -91,8 +108,6 @@ function ImageLibrary(props) {
     )
   })
 
-
-
   return (
     <div className='images-container'>
       <TextField
@@ -111,8 +126,6 @@ function ImageLibrary(props) {
         direction="row"
         justify="center"
         alignItems="center"
-      // item xs={12} sm={6} md={3}
-
       >
         {mappedData}
       </Grid>

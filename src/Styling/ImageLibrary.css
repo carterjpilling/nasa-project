@@ -44,3 +44,7 @@
 .description-body{
   height: 100% !important;
 }
+
+.searchresults-container{
+  min-height: 100vh;
+}

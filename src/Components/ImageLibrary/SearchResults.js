@@ -11,20 +11,17 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-//props.match.params.search
 
 function SearchResults(props) {
   const classes = useStyles();
   const [images, setImages] = useState([])
-  const [search, setSearch] = useState('Space Ship')
 
   useEffect(() => {
-    axios.get(`api/nasa/images/${search}`)
+    axios.get(`api/nasa/images/${props.match.params.search}`)
       .then((res) => {
         setImages(res.data)
       })
-
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const getGridListCols = () => {
@@ -44,7 +41,7 @@ function SearchResults(props) {
   }
 
   return (
-    <div>
+    <div className='searchresults-container'>
       <GridList cols={getGridListCols()}>
         {images.map((e, i) => (
           <GridListTile
