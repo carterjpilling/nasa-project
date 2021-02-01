@@ -1,6 +1,8 @@
 .images-container{
-  height: 100vh;
-  z-index: 1;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-description{
@@ -37,4 +39,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.description-body{
+  height: 100% !important;
 }

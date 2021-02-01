@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { TextField } from '@material-ui/core'
+import { TextField, Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Grid } from '@material-ui/core'
 
 import '../../Styling/ImageLibrary.css'
 
-const data = [
+const array = [
   {
     title: "Planets",
-    img: "",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/images/607694main_Kepler22bArtwork_full.jpg",
     searchWord: "planets",
     description: "'These planets are out of this world!'"
   },
@@ -25,7 +25,7 @@ const data = [
   },
   {
     title: "Earth Missions",
-    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss064e027012.jpg",
+    img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss064e016786.jpg",
     searchWord: "Earth Missions",
     description: "Earth is in space right? Check out missions to this great planet!"
   },
@@ -43,14 +43,53 @@ const data = [
   },
 ]
 
+const useStyles = makeStyles({
+  root: {
+    width: 315,
+    height: 300,
+    margin: 15,
+  },
+  card: {
+    width: 315,
+    height: 300,
+  },
+  media: {
+    height: 140,
+  },
+  gridcontainer: {
+    flexGrow: 1,
+  }
+});
+
 
 
 function ImageLibrary(props) {
+  const classes = useStyles();
 
   const [search, setSearch] = useState('Space Ship')
 
 
-
+  const mappedData = array.map((e, i) => {
+    return (
+      <CardActionArea key={i} className={classes.root}>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.media}
+            image={e.img}
+            title={e.title}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {e.title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {e.description}
+            </Typography>
+          </CardContent>
+        </Card>
+      </CardActionArea>
+    )
+  })
 
 
 
@@ -66,6 +105,17 @@ function ImageLibrary(props) {
           shrink: true,
         }}
       />
+      <Grid
+        className={classes.gridcontainer}
+        container spacing={0}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      // item xs={12} sm={6} md={3}
+
+      >
+        {mappedData}
+      </Grid>
     </div>
   )
 }
