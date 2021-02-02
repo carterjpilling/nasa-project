@@ -27,8 +27,8 @@
 
 .modal-div{
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@
 }
 
 .search-card{
-  width: 350 !important;
+  max-width: 350px !important;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 15px;

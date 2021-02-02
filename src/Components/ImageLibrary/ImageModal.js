@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
 export default function ImageModal(props) {
 
 
-  const { preview, setPreview, previewIndex, images } = props
+  const { open, setOpen, imgIndex, images } = props
   const classes = useStyles();
 
   function handleClose() {
-    setPreview(false)
+    setOpen(false)
   }
 
   return (
@@ -36,7 +36,7 @@ export default function ImageModal(props) {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className="modal-container"
-        open={preview}
+        open={open}
         onClose={handleClose}
         // closeAfterTransition
         BackdropComponent={Backdrop}
@@ -44,7 +44,7 @@ export default function ImageModal(props) {
           timeout: 500,
         }}
       >
-        <Fade in={preview}>
+        <Fade in={open}>
           <div className={classes.paper}>
             <div
               className="modal-img-container"
@@ -52,19 +52,19 @@ export default function ImageModal(props) {
             >
               <img
                 className="modal-img"
-                alt={images[previewIndex].data[0].title}
-                src={images[previewIndex].links[0].href}
+                alt={images[imgIndex].data[0].title}
+                src={images[imgIndex].links[0].href}
 
               />
               <body className="modal-description">
                 <Typography
                   align='center'
                 >
-                  {images[previewIndex].data[0].title}
+                  {images[imgIndex].data[0].title}
 
                 </Typography>
                 <Typography >
-                  {images[previewIndex].data[0].description}
+                  {images[imgIndex].data[0].description}
                 </Typography>
               </body>
             </div>

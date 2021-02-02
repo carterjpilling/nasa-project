@@ -10,7 +10,7 @@ const array = [
     title: "International Space Station",
     img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss064e027012.jpg",
     searchWord: "imagelibrary/International Space Station",
-    description: "Ever wonder who is watching the world while you sleep? Consider the ISS our first defense."
+    description: "Have you wondered who is watching the world while you sleep? Consider the ISS our first defense."
   },
   {
     title: "Mars Curiosity",
@@ -89,6 +89,7 @@ function ImageLibrary() {
   const history = useHistory()
   const classes = useStyles();
   const [search, setSearch] = useState(null)
+
 
   useEffect(() => {
     setSearch(null)
