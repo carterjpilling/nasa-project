@@ -16,5 +16,11 @@
     "image": "https://blogs.nasa.gov/commercialcrew/wp-content/uploads/sites/230/2021/01/Jan14CM2_C01421JNP049_C3PF-Lift-to-Mate-with-SM2-1024x683.jpg",
     "description": "Think Space is large? Try searching NASA's Image Library. Historical shots from Armstrong to modern day.",
     "link": "/imagelibrary"
+  },
+  {
+    "name": "Natural Event Tracker",
+    "image": "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss045e178278.jpg",
+    "description": "Browse the globe daily and look for natural events as they occur.",
+    "link": "/eventtracker"
   }
 ]
