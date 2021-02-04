@@ -7,6 +7,7 @@ import '../../Styling/ImageLibrary.css'
 import { useHistory } from 'react-router-dom'
 import ImageModal from './ImageModal'
 
+
 const useStyles = makeStyles(() => ({
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
