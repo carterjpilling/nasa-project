@@ -4,6 +4,7 @@ import '../../Styling/EventTracker.css'
 import { Card, CardContent, Typography, Button } from '@material-ui/core'
 import CategoriesInfo from '../data/categories.json'
 import sources from '../data/sources.json'
+import MapComponent from './Map'
 
 //https://eonet.sci.gsfc.nasa.gov/api/v3/categories 
 export default function EventTracker() {
@@ -60,6 +61,7 @@ export default function EventTracker() {
 
   return (
     <div className="event-div">
+
       <div className="card-container">
         <Card className='event-card-title'>
           <Typography
@@ -81,6 +83,10 @@ export default function EventTracker() {
           </div>
         }
       </div>
+
+      <MapComponent
+        events={events}
+      />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 .event-div{
   height: 100vh;
   box-sizing: border-box;
+  display: flex;
 }
 
 .array-container{
@@ -29,6 +30,7 @@
 }
 
 .event-card-title{
+  /* position:fixed; */
   display: flex;
   width: 355px;
   margin: 10px;
