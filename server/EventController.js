@@ -12,7 +12,7 @@ const axios = require('axios')
 module.exports = {
   getRecentEvents: async (req, res) => {
     console.log('Hit Recent')
-    await axios.get(`https://eonet.sci.gsfc.nasa.gov/api/v3/events?limit=20`)
+    await axios.get(`https://eonet.sci.gsfc.nasa.gov/api/v3/events?limit=100`)
       .then((response) => {
         return res.status(200).send(response.data)
       })

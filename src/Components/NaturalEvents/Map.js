@@ -29,15 +29,71 @@ function MapComponent(props) {
     // map.
   }, [])
 
-  function iconFinder(num) {
+  function iconFinder(cat) {
+    const DROUGHT = 'drought'
+    const DUSTHAZE = 'dustHaze'
+    const EARTHQUAKES = 'earthquakes'
+    const FLOODS = 'Floods'
+    const LANDSLIDES = 'landslides'
+    const MANDMADE = 'manmade'
+    const SEALAKEICE = 'seaLakeIce'
+    const SEVERESTORMS = 'severeStorms'
+    const SNOW = 'snow'
+    const TEMPEXTREMES = 'tempExtremes'
+    const VOLCANOES = 'volcanoes'
+    const WATERCOLOR = 'waterColor'
+    const WILDFIRES = 'wildfires'
+
     let icon
-    if (num === 2) {
-      icon = '/assets/iceberg.svg'
-    } else {
-      return null
+
+    switch (cat) {
+      case DROUGHT:
+        icon = '/assets/drought.svg'
+        break
+      case DUSTHAZE:
+        icon = '/assets/dusthaze.png'
+        break
+      case EARTHQUAKES:
+        icon = '/assets/earthquake.png'
+        break
+      case FLOODS:
+        icon = '/assets/floods.png'
+        break
+      case LANDSLIDES:
+        icon = '/assets/landslide.png'
+        break
+      case MANDMADE:
+        icon = '/assets/manmade.png'
+        break
+      case SEALAKEICE:
+        icon = '/assets/iceberg.svg'
+        break
+      case SEVERESTORMS:
+        icon = '/assets/severeweather.png'
+        break
+      case SNOW:
+        icon = '/assets/snow.png'
+        break
+      case TEMPEXTREMES:
+        icon = '/assets/extremetemp.png'
+        break
+      case VOLCANOES:
+        icon = '/assets/volcanoe.png'
+        break
+      case WATERCOLOR:
+        icon = '/assets/watercolor.png'
+        break
+      case WILDFIRES:
+        icon = '/assets/wildfire.svg'
+        break
+      default:
+        console.log('Returned no icon')
+        return null
     }
+
     return icon
   }
+
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
   }, [])
@@ -56,9 +112,9 @@ function MapComponent(props) {
       {props.events.map((e, i) => {
         return <Marker key={i}
           position={{ lat: e.geometry[0].coordinates[1], lng: e.geometry[0].coordinates[0] }}
-          onClick={() => console.log(e.title)}
+          onClick={() => console.log(e.categories[0].id)}
           icon={{
-            url: iconFinder(2),
+            url: iconFinder(e.categories[0].id),
             scaledSize: new window.google.maps.Size(25, 25)
           }}
 
