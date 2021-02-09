@@ -1,7 +1,6 @@
 import React from 'react'
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import ShowButton from './ShowButton'
-import { GiIceberg } from 'react-icons/gi'
 
 const containerStyle = {
   width: '100%',
@@ -9,9 +8,18 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 39,
+  lng: -98
 };
+
+const options = {
+  disableDefaultUI: true,
+  zoomControl: true,
+  restriction: {
+    latLngBounds: { north: 85, south: -85, west: -180, east: 180 },
+  },
+}
+
 
 function MapComponent(props) {
   const { isLoaded } = useLoadScript({
@@ -25,8 +33,6 @@ function MapComponent(props) {
     const bounds = new window.google.maps.LatLngBounds();
     map.fitBounds(bounds);
     setMap(map)
-
-    // map.
   }, [])
 
   function iconFinder(cat) {
@@ -105,10 +111,11 @@ function MapComponent(props) {
       zoom={10}
       onLoad={onLoad}
       onUnmount={onUnmount}
+      options={options}
       mapTypeControl={false}
       scaleControl={false}
     >
-      <ShowButton />
+      <ShowButton array={props.array} />
       {props.events.map((e, i) => {
         return <Marker key={i}
           position={{ lat: e.geometry[0].coordinates[1], lng: e.geometry[0].coordinates[0] }}
