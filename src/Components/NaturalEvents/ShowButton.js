@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import clsx from 'clsx';
 import { IconButton, makeStyles, useTheme, Drawer, Divider, Typography, Button } from '@material-ui/core';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import '../../Styling/EventTracker.css'
 
 const drawerWidth = 235;
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
   content: {
     flexGrow: 1,
@@ -82,7 +82,7 @@ export default function ShowButton(props) {
   }
 
   return (
-    <div className={classes.root}>
+    <div className={`${classes.root} ${'show-button-container'}`}>
       <Button
         color="inherit"
         aria-label="open drawer"
@@ -101,17 +101,17 @@ export default function ShowButton(props) {
         <Drawer
           className={`${classes.drawer} `}
           variant="persistent"
-          anchor="left"
+          anchor="right"
           open={listOpen}
           classes={{
             paper: classes.drawerPaper,
           }}
         >
           <div className={classes.drawerHeader}>
-            <Typography>Current Events</Typography>
             <IconButton onClick={handleDrawerToggle}>
-              <ChevronLeftIcon />
+              <ChevronRightIcon />
             </IconButton>
+            <Typography>Current Events</Typography>
           </div>
           <Divider />
           <div className='first-array-container'>

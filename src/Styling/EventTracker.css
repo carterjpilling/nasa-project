@@ -63,6 +63,15 @@
   position: fixed !important;
   box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
   border-radius: 2px !important;
-  right: 0;
+  left: 0;
   font-family: monospace !important;
+}
+
+.info-bubble{
+  margin-bottom: 30px !important;
+}
+
+.show-button-container{
+  position: fixed !important;
+  right: -235px;
 }

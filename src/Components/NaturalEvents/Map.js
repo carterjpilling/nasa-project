@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react'
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { Card, CardActionArea, Typography } from '@material-ui/core'
 import ShowButton from './ShowButton'
 import sources from '../data/sources.json'
@@ -37,6 +37,7 @@ function sourceFinder(source) {
 
 function MapComponent(props) {
   const { listOpen, setListOpen } = props
+  const [selected, setSelected] = useState(null)
 
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',
@@ -53,13 +54,15 @@ function MapComponent(props) {
 
 
   function panTo(lat, lng) {
+    setSelected(null)
     let panPoint = new window.google.maps.LatLng(lat, lng)
-    map.setZoom(6)
+    map.setZoom(9)
     map.panTo(panPoint)
     setListOpen(false)
   }
 
   function zoomOut() {
+    setSelected(null)
     let panPoint = new window.google.maps.LatLng(-10, 0)
     map.setZoom(2)
     map.panTo(panPoint)
@@ -185,14 +188,29 @@ function MapComponent(props) {
       {props.events.map((e, i) => {
         return <Marker key={i}
           position={{ lat: e.geometry[0].coordinates[1], lng: e.geometry[0].coordinates[0] }}
-          onClick={() => console.log(e.categories[0].id)}
+          onClick={() => setSelected(i)}
           icon={{
             url: iconFinder(e.categories[0].id),
             scaledSize: new window.google.maps.Size(25, 25)
           }}
 
-        />
+        >
+          {(selected === i) &&
+            <InfoWindow
+              position={{
+                lat: (e.geometry[0].coordinates[1] + .01),
+                lng: e.geometry[0].coordinates[0]
+              }}
+              onCloseClick={() => setSelected(null)}
+              className="info-bubble"
+            >
+              <Typography >{e.title}</Typography>
+            </InfoWindow>
+          }
+        </Marker>
       })}
+
+
     </GoogleMap>
   ) : <></>
 }
