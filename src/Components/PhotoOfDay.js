@@ -33,21 +33,32 @@ export default function PhotoOfDay() {
           <b>{photoInfo.date}</b>
         </Typography>
       </div>
-      {photoInfo.hdurl ?
-        <a href={photoInfo.hdurl}>
-          <img
-            className="apod-img"
-            alt={photoInfo.title}
-            src={photoInfo.hdurl}
-          />
-        </a> :
-        <a href={photoInfo.url}>
-          <img
-            className="apod-img" ƒ
-            alt={photoInfo.title}
-            src={photoInfo.url}
-          />
-        </a>}
+      {photoInfo.media_type === "video" ?
+        <iframe
+          src={photoInfo.url}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title={photoInfo.title}
+        /> :
+        <>
+          {photoInfo.hdurl ?
+            <a href={photoInfo.hdurl}>
+              <img
+                className="apod-img"
+                alt={photoInfo.title}
+                src={photoInfo.hdurl}
+              />
+            </a> :
+            <a href={photoInfo.url}>
+              <img
+                className="apod-img"
+                alt={photoInfo.title}
+                src={photoInfo.url}
+              />
+            </a>}
+        </>}
+
       <div>
         <br />
         <Typography variant="h5" align="center">
