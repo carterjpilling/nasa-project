@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import clsx from 'clsx';
-import { IconButton, makeStyles, useTheme, Drawer, Divider, } from '@material-ui/core';
+import { IconButton, makeStyles, useTheme, Drawer, Divider, Typography, Button } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import '../../Styling/EventTracker.css'
 
 const drawerWidth = 235;
@@ -10,6 +9,7 @@ const drawerWidth = 235;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -34,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+
+
   },
   drawerPaper: {
     width: drawerWidth,
@@ -44,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
   },
   content: {
     flexGrow: 1,
@@ -64,11 +66,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+//80.1vh, 8.3vhh margin-top
+
 export default function ShowButton(props) {
-  const { array } = props
+
+  const { array, listOpen, setListOpen } = props
   const classes = useStyles();
   const theme = useTheme();
-  const [listOpen, setListOpen] = useState(false)
+
 
 
   function handleDrawerToggle() {
@@ -77,18 +83,23 @@ export default function ShowButton(props) {
 
   return (
     <div className={classes.root}>
-      <IconButton
+      <Button
         color="inherit"
         aria-label="open drawer"
         onClick={handleDrawerToggle}
         className={`${clsx(listOpen && classes.hide)} ${'icon-button'}`}
       >
-        Show Events
-      </IconButton>
-      <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        SHOW EVENTS
+      </Button>
+      <Button
+        onClick={() => props.zoomOut()}
+        color="inherit"
+        className="reset-button">
+        Zoom Out
+      </Button>
+      <nav className={`${classes.drawer} `} aria-label="mailbox folders">
         <Drawer
-          className={classes.drawer}
+          className={`${classes.drawer} `}
           variant="persistent"
           anchor="left"
           open={listOpen}
@@ -97,8 +108,9 @@ export default function ShowButton(props) {
           }}
         >
           <div className={classes.drawerHeader}>
+            <Typography>Current Events</Typography>
             <IconButton onClick={handleDrawerToggle}>
-              {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+              <ChevronLeftIcon />
             </IconButton>
           </div>
           <Divider />

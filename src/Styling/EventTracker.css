@@ -1,18 +1,15 @@
 .event-div{
-  height: 80vh;
+  height: 81.7vh;
   box-sizing: border-box;
   display: flex;
 }
 
 .array-container{
-  /* height: 1000px; */
-  
   box-sizing: border-box;
   width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .first-array-container{
@@ -25,12 +22,13 @@
 .event-card{
   width: 200px;
   margin: 5px 10px 5px 10px;
-  padding: 5px;
-  /* height: 300px !important; */
+}
+
+.event-card-action-area{
+  padding: 5px !important;
 }
 
 .event-card-title{
-  /* position:fixed; */
   display: flex;
   width: 200px;
   margin: 10px;
@@ -40,10 +38,31 @@
 }
 
 .icon-button{
-  font-size: 20px !important;
+  font-size: 15px !important;
+  font-family: monospace !important;
   border-radius: 2px !important;
   margin: 10px !important;
   background-color: white  !important;
   box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
-  
+  height: 47px;
+  font-weight: bold !important;
+}
+
+.drawer-container{
+  height: 80.1vh !important;
+  margin-top: 8.3vh !important;
+}
+
+.reset-button{
+  font-weight: bold !important;
+  font-size: 15px !important;
+  background-color: white !important;
+  padding: 5px;
+  height: 47px;
+  margin: 10px !important;
+  position: fixed !important;
+  box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+  border-radius: 2px !important;
+  right: 0;
+  font-family: monospace !important;
 }
