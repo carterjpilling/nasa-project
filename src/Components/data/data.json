@@ -22,5 +22,11 @@
     "image": "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss045e178278.jpg",
     "description": "Browse the globe daily and look for natural events as they occur.",
     "link": "/eventtracker"
+  },
+  {
+    "name": "Pale Blue Dot of Earth",
+    "image": "https://planetary.s3.amazonaws.com/web/assets/pictures/_453x614_crop_center-center_line/20140801_PIA00452.jpg.webp",
+    "description": "The Pale Blue Dot is a photo of Earth taken by Voyager 1 on February 14, 1990.",
+    "link": "/palebluedot"
   }
 ]

@@ -14,7 +14,8 @@ export default function MarsWeather() {
 
   return (
     <div>
-      Mars Weather
+      <header>Pale Blue Dot</header>
+
     </div>
   )
 }

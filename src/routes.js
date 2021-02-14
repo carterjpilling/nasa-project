@@ -7,6 +7,7 @@ import MarsWeather from './Components/MarsWeather'
 import ImageLibrary from './Components/ImageLibrary/ImageLibrary'
 import SearchResults from './Components/ImageLibrary/SearchResults'
 import EventTracker from './Components/NaturalEvents/EventTrackers'
+import PaleBlueDot from './Components/PaleBlueDot'
 
 export default (
   <Switch>
@@ -16,6 +17,7 @@ export default (
     <Route exact path='/imagelibrary' component={ImageLibrary} />
     <Route path='/imagelibrary/:search' component={SearchResults} />
     <Route path='/eventtracker' component={EventTracker} />
+    <Route path='/palebluedot' component={PaleBlueDot} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 )
