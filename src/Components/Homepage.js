@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { makeStyles, Card, CardActionArea, CardContent, Typography, CardMedia, Grid } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import cardData from './data/data.json'
@@ -24,6 +24,10 @@ const useStyles = makeStyles({
 
 export default function Homepage() {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const cardArray = cardData.map((e, i) => {
     return (

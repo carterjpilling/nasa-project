@@ -7,6 +7,9 @@ export default function EventTracker() {
   const [events, setEvents] = useState([])
   const [listOpen, setListOpen] = useState(false)
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   useEffect(() => {
     axios.get('/api/events').then((res) => {

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { Card, CardActionArea, Typography } from '@material-ui/core'
 import ShowButton from './ShowButton'
@@ -38,6 +38,10 @@ function sourceFinder(source) {
 function MapComponent(props) {
   const { listOpen, setListOpen } = props
   const [selected, setSelected] = useState(null)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const { isLoaded } = useLoadScript({
     id: 'google-map-script',

@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Styling/PaleBlueDot.css'
 import { Typography } from '@material-ui/core'
 
 export default function PaleBlueDot() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   return (
     <div className="pale-container">

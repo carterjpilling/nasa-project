@@ -24,6 +24,10 @@ function SearchResults(props) {
   const [imgIndex, setImgIndex] = useState()
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  useEffect(() => {
     axios.get(`api/nasa/images/${props.match.params.search}`)
       .then((res) => {
         setImages(res.data)

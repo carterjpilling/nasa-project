@@ -92,6 +92,7 @@ function ImageLibrary() {
 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setSearch(null)
   }, [])
 

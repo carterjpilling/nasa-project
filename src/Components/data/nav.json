@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Homepage",
+    "icon": "HomeIcon",
+    "link": "/"
+  },
+  {
+    "name": "Photo of the Day",
+    "icon": "PhotoIcon",
+    "link": "/apod"
+  },
+  {
+    "name": "Mars Weather",
+    "icon": "WbSunnyIcon",
+    "link": "/marsweather"
+  },
+  {
+    "name": "NASA Image Library",
+    "icon": "BurstModeIcon",
+    "link": "/imagelibrary"
+  },
+  {
+    "name": "World Event Tracker",
+    "icon": "PublicIcon",
+    "link": "/eventtracker"
+  }
+]

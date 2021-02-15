@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Modal, Backdrop, Fade, Typography, CardMedia, Card } from '@material-ui/core';
 import '../../Styling/ImageLibrary.css'
@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ImageModal(props) {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
 
   const { open, setOpen, imgIndex, images } = props
