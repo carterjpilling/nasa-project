@@ -8,6 +8,7 @@ import ImageLibrary from './Components/ImageLibrary/ImageLibrary'
 import SearchResults from './Components/ImageLibrary/SearchResults'
 import EventTracker from './Components/NaturalEvents/EventTrackers'
 import PaleBlueDot from './Components/PaleBlueDot'
+import EpicEarth from './Components/Epic'
 
 export default (
   <Switch>
@@ -18,6 +19,7 @@ export default (
     <Route path='/imagelibrary/:search' component={SearchResults} />
     <Route path='/eventtracker' component={EventTracker} />
     <Route path='/palebluedot' component={PaleBlueDot} />
+    <Route path='/epicearth' component={EpicEarth} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 )

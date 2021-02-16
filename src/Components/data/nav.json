@@ -1,7 +1,7 @@
 [
   {
     "name": "Homepage",
-    "icon": "HomeIcon",
+    "icon": "DashboardIcon",
     "link": "/"
   },
   {
@@ -21,7 +21,12 @@
   },
   {
     "name": "World Event Tracker",
-    "icon": "PublicIcon",
+    "icon": "MapIcon",
     "link": "/eventtracker"
+  },
+  {
+    "name": "EPIC Earth Imagery",
+    "icon": "PublicIcon",
+    "link": "/epicearth"
   }
 ]

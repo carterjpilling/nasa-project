@@ -1,0 +1,47 @@
+.epic-container{
+  height: 85vh;
+  width: 100vw;
+}
+
+.image-container{
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+.earth-image{
+  /* width: 100%; */
+  height: 100%;
+}
+
+
+.icons{
+  color: white !important;
+}
+
+.icons:hover{
+  cursor: pointer;
+}
+
+@media only screen and (max-width:700px){
+  .earth-image{
+    height: 80%;
+  }
+
+}
+
+@media only screen and (max-width:550px){
+  .earth-image{
+    height: 50%;
+  }
+
+}
+
+@media only screen and (max-width:350px){
+  .earth-image{
+    height: 30%;
+  }
+
+}

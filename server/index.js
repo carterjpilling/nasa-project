@@ -12,6 +12,7 @@ app.use(express.json())
 app.get('/api/nasa/photo', ApiCtrl.photo)
 app.get('/api/nasa/mars', ApiCtrl.mars)
 app.get('/api/nasa/images/:searchitem', ApiCtrl.images)
+app.get('/api/nasa/epic', ApiCtrl.epic)
 
 
 app.get('/api/events', EventCtrl.getRecentEvents)

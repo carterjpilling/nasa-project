@@ -4,11 +4,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import '../Styling/NavBar.css'
 import NavList from './data/nav.json'
+import AppsIcon from '@material-ui/icons/Apps';
+import DashboardIcon from '@material-ui/icons/Dashboard';
 import HomeIcon from '@material-ui/icons/Home';
 import PhotoIcon from '@material-ui/icons/Photo';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import BurstModeIcon from '@material-ui/icons/BurstMode';
 import PublicIcon from '@material-ui/icons/Public';
+import MapIcon from '@material-ui/icons/Map';
 import { Link } from 'react-router-dom'
 
 
@@ -33,21 +36,24 @@ export default function NavBar(props) {
 
   function iconFinder(icon) {
 
-    const HOME = 'HomeIcon'
+    const HOME = 'DashboardIcon'
     const PHOTO = 'PhotoIcon'
     const WB = 'WbSunnyIcon'
     const BURST = 'BurstModeIcon'
+    const MAP = 'MapIcon'
     const PUBLIC = 'PublicIcon'
 
     switch (icon) {
       case HOME:
-        return <HomeIcon />
+        return <DashboardIcon />
       case PHOTO:
         return <PhotoIcon />
       case WB:
         return <WbSunnyIcon />
       case BURST:
         return <BurstModeIcon />
+      case MAP:
+        return <MapIcon />
       case PUBLIC:
         return <PublicIcon />
       default:
