@@ -34,5 +34,11 @@
     "image": "https://epic.gsfc.nasa.gov/archive/natural/2015/10/31/png/epic_1b_20151031074844.png",
     "description": "View fresh photos of EARTH provided by DSCOVR's Earth Polychromatic Imaging Camera (EPIC) instrument.",
     "link": "/epicearth"
+  },
+  {
+    "name": "Mars 2020 Perseverance",
+    "image": "https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/pia24315_05_guidedentry_2000.jpg?itok=JUbyEiHk",
+    "description": "NASA's most ambitious MARS rover mission is landing on Feb. 18, 2021. View more about the mission and its most precise landing yet.",
+    "link": "/perserverance"
   }
 ]

@@ -13,13 +13,13 @@ export default function PaleBlueDot() {
       <Typography
         className='headers'
         align='left'
-        variant='h4'>
+        variant='h3'>
         A Pale Blue Dot
       </Typography>
       <br />
       <Typography
         className='headers'
-        variant='subtitle1'
+        variant='h6'
         align='left'
       >
         At Sagan's request, the Voyager 1 took the following image on its way to the edge of the solar system. The vido and excerpt below are taken from Carl Sagan's book <i> Pale Blue Dot.</i>

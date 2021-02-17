@@ -3,19 +3,23 @@ import axios from 'axios'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import '../Styling/EpicEarth.css'
+import { Button } from '@material-ui/core';
 
 
 export default function EpicEarth() {
   const [earthImages, setEarthImages] = useState([])
   const [index, setIndex] = useState(0)
+  const [slideState, setSlideState] = useState(false)
 
   useEffect(() => {
+    setSlideState(false)
     window.scrollTo(0, 0);
     axios.get('/api/nasa/epic')
       .then((res) => {
         setEarthImages(res.data)
       })
   }, [])
+
 
   function slideLeft() {
     if (index === 0) {
@@ -25,11 +29,28 @@ export default function EpicEarth() {
     }
   }
 
+  function triggerSlide() {
+    console.log('hit', slideState)
+    setSlideState(!slideState)
+    sliderShow()
+  }
+
+  function sliderShow() {
+    if (slideState) {
+      setInterval(function () { slideRight(); }, 1000);
+    }
+  }
+
   function slideRight() {
-    if (index === (earthImages.length - 1)) {
-      setIndex(0)
+    if (slideState) {
+      console.log(index)
+      if (index === (earthImages.length - 1)) {
+        setIndex(0)
+      } else {
+        setIndex((index + 1))
+      }
     } else {
-      setIndex((index + 1))
+      return null
     }
   }
 
@@ -41,7 +62,9 @@ export default function EpicEarth() {
           className='icons'
           onClick={() => slideLeft()}
         />
+        <Button className={slideState ? 'true-button' : 'false-button'} onClick={() => triggerSlide()}>Slideshow</Button>
         <img
+          onLoad={() => console.log('loaded')}
           className="earth-image"
           src={earthImages[index]}
           alt="Earth" />

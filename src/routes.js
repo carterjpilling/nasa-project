@@ -9,6 +9,7 @@ import SearchResults from './Components/ImageLibrary/SearchResults'
 import EventTracker from './Components/NaturalEvents/EventTrackers'
 import PaleBlueDot from './Components/PaleBlueDot'
 import EpicEarth from './Components/Epic'
+import Perserverance from './Components/Perserverance'
 
 export default (
   <Switch>
@@ -20,6 +21,7 @@ export default (
     <Route path='/eventtracker' component={EventTracker} />
     <Route path='/palebluedot' component={PaleBlueDot} />
     <Route path='/epicearth' component={EpicEarth} />
+    <Route path='/perserverance' component={Perserverance} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 )

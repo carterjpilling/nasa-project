@@ -13,9 +13,9 @@
 }
 
 .headers{
-  margin-top: 25px;
+  margin-top: 25px !important;
   width: 650px;
-  font-family: monospace;
+  font-family: monospace !important;
 }
 .excerpt{
   width: 650px;
@@ -25,10 +25,15 @@
   border-radius: 2%;
   font-family: monospace ;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 .body{
-  font-family: monospace ;
+  font-family: monospace !important ;
+  width: 100% !important;
 }
 
 
